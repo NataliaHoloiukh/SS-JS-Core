@@ -61,26 +61,27 @@ try {
 
 
 // *********Task 5**********
-let user = [];
+
 
 function showUser(id) {
     if (id < 0) {
-        throw new Error(`ID must not be negative: ${id}`); 
-    } else {
-        user.push({id: `${id}`});
+        throw new Error(`ID must not be negative: ${id}`);
     }
+    return {id};
 }
-
 
 function showUsers(ids) {
-    for (let j = 0;  j < ids.length; j++) {
+    let correctUser = [];
+    for (let j = 0; j < ids.length; j++) {
         try {
-            showUser(ids[j])
-        } catch {
-            console.log(`ID must not be negative: ${ids[j]}`)
+            correctUser.push(showUser(ids[j]));
+        } catch (err) {
+            console.log(`ID must not be negative: ${ids[j]}`);
         }
     }
-    console.log(user);
+    return correctUser;
 }
 
-showUsers([7, -12, 44, 22]);
+console.log(showUsers([7, -12, 44, 22]));
+
+
