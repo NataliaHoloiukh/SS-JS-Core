@@ -22,9 +22,9 @@ alert(image.outerHTML);
 // ******Task 3******
 let task3 = document.querySelectorAll('div > p');
 
-document.write(`Selector text 0: ${task3[0].textContent} ${'</br>'}`);
-document.write(`Selector text 1: ${task3[1].textContent} ${'</br>'}`);
-document.write(`Selector text 2: ${task3[2].textContent} ${'</br>'}`);
+for (let i = 0; i < task3.length; i++) {
+    document.write(`Selector text ${i}: ${task3[i].textContent} ${'</br>'}`);
+}
 
 let par4 = document.querySelectorAll('body > p');
 par4[0].remove();
