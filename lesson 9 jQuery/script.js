@@ -13,6 +13,14 @@ let div2 = $('h3+div:last');
 $('h3:first').before(div1);
 $('h3:last').before(div2);
 
+//another variant
+let divArr = $('div');
+let h3Arr = $('h3');
+
+for (i = 0; i < divArr.length; i++) {
+    $(divArr[i]).insertBefore(h3Arr[i]);
+}
+
 
 // **********Task 4*********
 let checkbox = $('input');
